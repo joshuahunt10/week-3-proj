@@ -17,15 +17,20 @@ for(let i = 0; i < eleValue.length; i++){
     })
 }
 
-for(let i = 0; i < opValue.length; i++){
-  opValue[i].addEventListener('click', function(){
-    console.log('operator worked!');
-    holdArray.push(opValue[i].id);
-    displayArray = holdArray.join("");
-    console.log(displayArray);
-    displayBox.textContent = displayArray;
-  })
-}
+
+
+for(var i = 0; i < opValue.length; i++){
+  opValue[i].addEventListener('click', action(i));
+};
+
+// FIXME: runs this function and prints the operators without any event.
+
+function action(i){
+  holdArray.push(opValue[i].id);
+  displayArray = holdArray.join("");
+  displayBox.textContent = displayArray;
+};
+
 
 equals.addEventListener('click', function(){
   console.log(displayArray);
