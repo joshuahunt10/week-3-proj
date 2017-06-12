@@ -7,10 +7,11 @@ let equals = document.querySelector('#equals')
 let clear = document.querySelector('.clear-button')
 let displayBox = document.querySelector('.display-box');
 let calcAll = document.querySelector('.calculator')
+let sqrt = document.querySelector('.sqrt');
 var answer;
 
 for(let i = 0; i < eleValue.length; i++){
-    eleValue[i].addEventListener('click', function(){
+    eleValue[i].addEventListener('click', function number(){
       holdArray.push(eleValue[i].id);
       displayArray = holdArray.join("");
       displayBox.textContent = displayArray;
@@ -18,29 +19,32 @@ for(let i = 0; i < eleValue.length; i++){
 }
 
 for(let i = 0; i < opValue.length; i++){
-  opValue[i].addEventListener('click', function(){
-    console.log('operator worked!');
+  opValue[i].addEventListener('click', function operater(){
     holdArray.push(opValue[i].id);
     displayArray = holdArray.join("");
-    console.log(displayArray);
     displayBox.textContent = displayArray;
   })
 }
 
-equals.addEventListener('click', function(){
-  console.log(displayArray);
+equals.addEventListener('click', function equals(){
   noCommas = holdArray.join("");
-  answer = parseFloat(eval(noCommas).toFixed(9));
-  console.log('the answer is ' + answer);
+  answer = parseFloat(eval(noCommas).toFixed(7));
   displayBox.textContent = answer;
   displayArray = [];
   holdArray = [];
-
 })
 
-clear.addEventListener('click', function(){
+clear.addEventListener('click', function clear(){
   displayArray = [];
   holdArray = [];
-  console.log('Cleared the displayArray ' + displayArray);
   displayBox.textContent = displayArray;
+})
+
+sqrt.addEventListener('click', function sqrt(){
+  noCommas = holdArray.join("");
+  var sqrtAns = Math.sqrt(noCommas);
+  answer = parseFloat(eval(sqrtAns).toFixed(7));
+  displayBox.textContent = answer;
+  displayArray= [];
+  holdArray = [];
 })

@@ -20,6 +20,25 @@ body{
   flex:1;
 }
 
+.second-row{
+  display: flex;
+}
+
+.second-row div:nth-child(1) {
+  flex-basis:50%;
+}
+
+#sqrt{
+  flex-basis:50%;
+  background-color: #82C276;
+  border: 0.5px solid #AAD6A3;
+
+}
+
+#sqrt p {
+  color:#4B7042;
+}
+
 .butt-row{
   display: flex;
   flex-direction: row;
