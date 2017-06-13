@@ -20,7 +20,7 @@ for(let i = 0; i < eleValue.length; i++){
 
 
 for(var i = 0; i < opValue.length; i++){
-  opValue[i].addEventListener('click', action(i));
+  opValue[i].addEventListener('click', action);
 };
 
 // FIXME: runs this function and prints the operators without any event.
